@@ -116,7 +116,10 @@ app.delete('/api/persons/:id', (request, response) => {
   phonebook = phonebook.filter(person => person.id !== id)
 
 
-	response.status(204).end()
+	response.status(200).json({
+		"message": "Deleted",
+		"person": person
+	})
 })
 
 const PORT = 3001
